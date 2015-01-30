@@ -197,9 +197,9 @@ func (e *encoder) writeImageBlock(pm *image.Paletted, delay int) {
 		e.buf[1] = gcLabel     // Graphic Control Label.
 		e.buf[2] = gcBlockSize // Block Size.
 		if transparentIndex != -1 {
-			e.buf[3] = 0x01
+			e.buf[3] = 0x09
 		} else {
-			e.buf[3] = 0x00
+			e.buf[3] = 0x08
 		}
 		writeUint16(e.buf[4:6], uint16(delay)) // Delay Time (1/100ths of a second)
 
